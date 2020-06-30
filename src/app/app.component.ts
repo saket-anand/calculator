@@ -66,7 +66,7 @@ export class AppComponent {
     } else if (this.operator == '/') {
       console.log(this.secondOperand);
       if (parseFloat(this.secondOperand) == 0) {
-        result = 'Cannot divide by zero';
+        result = "Can't divide by 0";
       } else {
         result = parseFloat(this.firstOperand) / parseFloat(this.secondOperand);
       }
