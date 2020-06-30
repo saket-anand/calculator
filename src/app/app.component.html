@@ -1,5 +1,53 @@
-<div class="container">
+<div class="container main">
   <div class="row">
-    <h1>Hello World!</h1>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="calc">
+        <div class="displayArea">
+          <div class="resultDisplay">
+            <div class="exprDisplay">
+              {{ expression }}
+            </div>
+            {{
+              result.length > 10 && result.includes(".")
+                ? (result | number: "1.1-12")
+                : result
+            }}
+          </div>
+        </div>
+        <div class="keypadArea">
+          <table class="keypad">
+            <tr>
+              <td colspan="4" (click)="reset()">AC</td>
+            </tr>
+            <tr>
+              <td (click)="press('7')" class="whiteButton">7</td>
+              <td (click)="press('8')" class="whiteButton">8</td>
+              <td (click)="press('9')" class="whiteButton">9</td>
+              <td (click)="press('x')">x</td>
+            </tr>
+            <tr>
+              <td (click)="press('4')" class="whiteButton">4</td>
+              <td (click)="press('5')" class="whiteButton">5</td>
+              <td (click)="press('6')" class="whiteButton">6</td>
+              <td (click)="press('-')">-</td>
+            </tr>
+            <tr>
+              <td (click)="press('1')" class="whiteButton">1</td>
+              <td (click)="press('2')" class="whiteButton">2</td>
+              <td (click)="press('3')" class="whiteButton">3</td>
+              <td (click)="press('+')">+</td>
+            </tr>
+            <tr>
+              <td (click)="solve()" class="blueButton">=</td>
+              <td (click)="press('0')" class="whiteButton">0</td>
+              <td (click)="press('.')" class="whiteButton">.</td>
+              <td (click)="press('/')">/</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
   </div>
 </div>
